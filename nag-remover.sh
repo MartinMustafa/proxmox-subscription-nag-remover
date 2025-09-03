@@ -6,6 +6,13 @@ path="/usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js"
 # Make backup
 cp "$path" "$path.bak"
 
+
+# Check if not already tweaked
+if grep -q "res.data.status.toLowerCase() == 'active'" "$path"; then
+    echo "✅ Subscription tweak already applied. Exiting."
+    exit 0
+fi
+
 # Replace first occurrence
 sed -i '0,/res\.data\.status\.toLowerCase() !== '\''active'\''/s//res.data.status.toLowerCase() == '\''active'\''/' "$path"
 
