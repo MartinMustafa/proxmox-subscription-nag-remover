@@ -30,7 +30,10 @@ bash <(curl -s https://raw.githubusercontent.com/MartinMustafa/proxmox-subscript
 /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js.bak
 ```
 
-2. Replaces the first occurrence of:
+2. checks if alreay
+
+
+3. Replaces the first occurrence of:
 
 ```js
 res.data.status.toLowerCase() !== 'active'
@@ -42,8 +45,8 @@ with:
 res.data.status.toLowerCase() == 'active'
 ```
 
-3. Restarts the `pveproxy` service.
-4. Prints instructions to clear your browser cache and reload the site.
+4. Restarts the `pveproxy` service.
+5. Prints instructions to clear your browser cache and reload the site.
 
 ---
 
