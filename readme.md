@@ -55,6 +55,3 @@ res.data.status.toLowerCase() == 'active'
 
 ---
 
-I can also create a **one-paragraph “README.md ready” version** that is even shorter and minimal for GitHub if you want.
-
-Do you want me to do that?
