@@ -22,31 +22,32 @@ bash <(curl -s https://raw.githubusercontent.com/MartinMustafa/proxmox-subscript
 
 ---
 
+
 ## What it does
 
-1. Makes a backup of the original file:
+1. **Creates a backup** of the original file at:
 
-```bash
-/usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js.bak
-```
+   ```bash
+   /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js.bak
+   ```
 
-2. checks if alreay
+2. **Checks if the tweak is already applied** (to avoid duplicating changes).
 
+3. **Replaces the first occurrence** of:
 
-3. Replaces the first occurrence of:
+   ```js
+   res.data.status.toLowerCase() !== 'active'
+   ```
 
-```js
-res.data.status.toLowerCase() !== 'active'
-```
+   with:
 
-with:
+   ```js
+   res.data.status.toLowerCase() == 'active'
+   ```
 
-```js
-res.data.status.toLowerCase() == 'active'
-```
+4. **Restarts the `pveproxy` service** so the change takes effect.
 
-4. Restarts the `pveproxy` service.
-5. Prints instructions to clear your browser cache and reload the site.
+5. **Prints instructions** reminding you to clear your browser cache and reload the Proxmox web interface.
 
 ---
 
